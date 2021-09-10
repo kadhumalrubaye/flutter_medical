@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/screen/our_service.dart';
 import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/menu_card.dart';
@@ -18,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
               children: <Widget>[
                 HeaderLogo(),
                 Text(
-                  'مرحبا بكم',
+                  'Welcome',
                   style: TextStyle(
                     fontSize: 28,
                     color: mTitleTextColor,
@@ -29,7 +30,7 @@ class WelcomeScreen extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  'يمكنك الان معرفة مواعيد الاطباء و اوقات تواجدهم',
+                  'جميع خدمات عيادات برايت ,\n تجدونها في  تطبيقنا',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -42,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                   size: 36,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 24,
                 ),
               ],
             ),
@@ -84,38 +85,51 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 18,
                     ),
-                    SingleChildScrollView(
-                      child: GridView.count(
-                        crossAxisCount: 3,
-                        children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        MenuCard(
+                          imageUrl: 'assets/images/about_us.png',
+                          title: 'الأطباء',
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ReserveScreen();
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                        MenuCard(
+                          imageUrl: 'assets/images/contact_us.png',
+                          title: 'تواصل معنا',
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => OurService()));
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          MenuCard(
+                            imageUrl: 'assets/images/location.png',
+                            title: 'موقعنا',
+                          ),
                           MenuCard(
                             imageUrl: 'assets/images/our_service.png',
                             title: 'خدماتنا',
-                            press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return ReserveScreen();
-                                  },
-                                ),
-                              );
-                            },
-                          ),
-                          MenuCard(
-                            imageUrl: 'assets/images/about_us.png',
-                            title: 'من نحن',
-                          ),
-                          SizedBox(
-                            height: 18,
-                          ),
-                          MenuCard(
-                            imageUrl: 'assets/images/contact_us.png',
-                            title: 'اتصل بنا',
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

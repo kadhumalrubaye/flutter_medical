@@ -46,13 +46,10 @@ class ReserveScreen extends StatelessWidget {
                       height: 32,
                     ),
                     ChooseTimeGroup(
-                      title: 'Morning',
+                      title: 'صباحا',
                       list: [
-                        ChooseModel('09.00 AM'),
-                        ChooseModel('09.30 AM', check: true),
-                        ChooseModel('10.30 AM'),
-                        ChooseModel('11.00 AM'),
-                        ChooseModel('11.30 AM'),
+                        ChooseModel('08.30 AM'),
+                        // ChooseModel('09.30 AM', check: true),
                         ChooseModel('12.00 AM'),
                       ],
                     ),
@@ -60,25 +57,9 @@ class ReserveScreen extends StatelessWidget {
                       height: 32,
                     ),
                     ChooseTimeGroup(
-                      title: 'Afternoon',
+                      title: 'مساءا',
                       list: [
                         ChooseModel('02.00 PM'),
-                        ChooseModel('02.30 PM'),
-                        ChooseModel('03.00 PM'),
-                        ChooseModel('03.30 PM'),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    ChooseTimeGroup(
-                      title: 'Evening',
-                      list: [
-                        ChooseModel('06.00 PM'),
-                        ChooseModel('06.30 PM'),
-                        ChooseModel('07.00 PM'),
-                        ChooseModel('07.30 PM'),
-                        ChooseModel('08.00 PM'),
                         ChooseModel('08.30 PM'),
                       ],
                     ),
@@ -104,7 +85,7 @@ class ChooseSlot extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Choose Your Slot',
+          'اوقات التواجد',
           style: TextStyle(
             color: mTitleTextColor,
             fontSize: 18,
