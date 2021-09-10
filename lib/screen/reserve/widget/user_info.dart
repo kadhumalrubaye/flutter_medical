@@ -17,19 +17,24 @@ class UserInfo extends StatelessWidget {
             width: 100,
             height: 100,
           ),
-          SizedBox(width: 24,),
+          SizedBox(
+            width: 24,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'dr.John Doe',
+                'د.ايمن صلاح الدين',
                 style: TextStyle(
                   color: mButtonColor,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text('Pulmonologist',style: TextStyle(fontSize: 12),)
+              Text(
+                'طبيب اسنان',
+                style: TextStyle(fontSize: 12),
+              )
             ],
           )
         ],

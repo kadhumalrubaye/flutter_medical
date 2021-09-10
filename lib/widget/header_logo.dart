@@ -13,19 +13,20 @@ class HeaderLogo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            'assets/images/logo.png',
-            width: 36,
-            height: 36,
+          // Image.asset(
+          //   'assets/images/bright_logo.png',
+          //   width: 100,
+          //   height: 100,
+          // ),
+          SizedBox(
+            width: 12,
           ),
-          SizedBox(width: 12,),
           Text(
-            'medical',
+            'عيادات برايت التخصصية',
             style: TextStyle(
-              fontSize: 38,
-              color:mTitleTextColor,
-              fontWeight: FontWeight.bold
-            ),
+                fontSize: 25,
+                color: mTitleTextColor,
+                fontWeight: FontWeight.bold),
           ),
         ],
       ),

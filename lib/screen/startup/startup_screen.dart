@@ -11,7 +11,7 @@ class StartupScreen extends StatelessWidget {
       body: Column(
         children: <Widget>[
           MyHeader(
-            height: 535,
+            height: 400,
             imageUrl: 'assets/images/doctor.png',
             child: HeaderLogo(),
           ),
@@ -28,7 +28,7 @@ class StartupScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text(
-                    'Booking Apps',
+                    'تطبيق عيادات برايت ',
                     style: TextStyle(
                         fontSize: 32,
                         color: mTitleTextColor,
@@ -38,8 +38,8 @@ class StartupScreen extends StatelessWidget {
                     height: 32,
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetuer \n'
-                    'adipiscing elit, sed diam nonummy nibh euismod ',
+                    'يمكنك الان الاطلاع على كافة التفاصيل \n'
+                    'المتعلقة بعيادات برايت التخصصية ',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: mTitleTextColor),
                   ),
@@ -61,7 +61,7 @@ class StartupScreen extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        'Book Now',
+                        'دخول',
                         style: TextStyle(fontSize: 22, color: Colors.white),
                       ),
                     ),

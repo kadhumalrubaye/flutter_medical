@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
               children: <Widget>[
                 HeaderLogo(),
                 Text(
-                  'Welcome',
+                  'مرحبا بكم',
                   style: TextStyle(
                     fontSize: 28,
                     color: mTitleTextColor,
@@ -29,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  'Lorem ipsum dolor sit amet,\n consectetuer adipiscing elit',
+                  'يمكنك الان معرفة مواعيد الاطباء و اوقات تواجدهم',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                   size: 36,
                 ),
                 SizedBox(
-                  height: 24,
+                  height: 10,
                 ),
               ],
             ),
@@ -57,72 +57,67 @@ class WelcomeScreen extends StatelessWidget {
                   end: Alignment.bottomCenter,
                 ),
               ),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          'Our Health\nServices',
-                          style: TextStyle(
-                            color: mTitleTextColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Icon(
-                          Icons.menu,
-                          color: mSecondBackgroundColor,
-                          size: 36,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      MenuCard(
-                        imageUrl: 'assets/images/general_practice.png',
-                        title: 'General Practice',
-                        press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return ReserveScreen();
-                              },
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            'قائمة المحتويات',
+                            style: TextStyle(
+                              color: mTitleTextColor,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                             ),
-                          );
-                        },
+                          ),
+                          Icon(
+                            Icons.menu,
+                            color: mSecondBackgroundColor,
+                            size: 36,
+                          ),
+                        ],
                       ),
-                      MenuCard(
-                        imageUrl: 'assets/images/specialist.png',
-                        title: 'Specialist',
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    SingleChildScrollView(
+                      child: GridView.count(
+                        crossAxisCount: 3,
+                        children: [
+                          MenuCard(
+                            imageUrl: 'assets/images/our_service.png',
+                            title: 'خدماتنا',
+                            press: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return ReserveScreen();
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                          MenuCard(
+                            imageUrl: 'assets/images/about_us.png',
+                            title: 'من نحن',
+                          ),
+                          SizedBox(
+                            height: 18,
+                          ),
+                          MenuCard(
+                            imageUrl: 'assets/images/contact_us.png',
+                            title: 'اتصل بنا',
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      MenuCard(
-                        imageUrl: 'assets/images/sexual_health.png',
-                        title: 'Sexual Health',
-                      ),
-                      MenuCard(
-                        imageUrl: 'assets/images/immunisation.png',
-                        title: 'Immunisation',
-                      ),
-                    ],
-                  ),
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
