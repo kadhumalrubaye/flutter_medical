@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/screen/contact_with_us.dart';
 import 'package:flutter_medical/screen/our_service.dart';
 import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
@@ -102,9 +103,17 @@ class WelcomeScreen extends StatelessWidget {
                             );
                           },
                         ),
-                        MenuCard(
-                          imageUrl: 'assets/images/contact_us.png',
-                          title: 'تواصل معنا',
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => ContactWithUs()));
+                          },
+                          child: MenuCard(
+                            imageUrl: 'assets/images/contact_us.png',
+                            title: 'تواصل معنا',
+                          ),
                         ),
                       ],
                     ),
