@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/screen/contact_with_us.dart';
+import 'package:flutter_medical/screen/doctor_list.dart';
 import 'package:flutter_medical/screen/our_service.dart';
 import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
@@ -97,7 +98,8 @@ class WelcomeScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return ReserveScreen();
+                                  // return ReserveScreen();
+                                  return DoctorList();
                                 },
                               ),
                             );
