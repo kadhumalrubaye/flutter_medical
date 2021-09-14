@@ -8,6 +8,9 @@ import 'package:flutter_medical/screen/reserve/widget/user_info.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
 class ReserveScreen extends StatelessWidget {
+  final String doctor_name;
+
+  const ReserveScreen({Key key, @required this.doctor_name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +25,9 @@ class ReserveScreen extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                UserInfo(),
+                UserInfo(
+                  doctor_name: doctor_name,
+                ),
               ],
             ),
           ),

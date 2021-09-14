@@ -1,6 +1,6 @@
 class DoctorCalendar {
-  final String _doctor_name;
-  final Map<String, String> _availabel_week;
+  final String doctor_name;
+  final Map<String, String> availabel_week;
 
-  const DoctorCalendar(this._doctor_name, this._availabel_week);
+  DoctorCalendar(this.doctor_name, this.availabel_week);
 }

@@ -67,12 +67,16 @@ class DoctorList extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => DoctorDetailsScreen()));
+                            builder: (_) => ReserveScreen(
+                                  doctor_name: 'دكتور مصطفى',
+                                )));
                   },
-                  child: ListTile(
-                    title: Text("دكتور ايمن"),
-                    subtitle: Text("متواجد"),
-                    leading: Image.asset('assets/images/(1).png'),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("دكتور مصطفى"),
+                      subtitle: Text("متواجد"),
+                      leading: Image.asset('assets/images/(1).png'),
+                    ),
                   ),
                 ),
                 GestureDetector(
@@ -80,12 +84,16 @@ class DoctorList extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => DoctorDetailsScreen()));
+                            builder: (_) => ReserveScreen(
+                                  doctor_name: 'دكتور ايمن',
+                                )));
                   },
-                  child: ListTile(
-                    title: Text("دكتورة ملاذ"),
-                    subtitle: Text("غير متواجد"),
-                    leading: Image.asset('assets/images/(1).png'),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("دكتور ايمن"),
+                      subtitle: Text("متواجد"),
+                      leading: Image.asset('assets/images/(1).png'),
+                    ),
                   ),
                 ),
                 GestureDetector(
@@ -93,12 +101,16 @@ class DoctorList extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => DoctorDetailsScreen()));
+                            builder: (_) => ReserveScreen(
+                                  doctor_name: 'دكتورة ملاذ',
+                                )));
                   },
-                  child: ListTile(
-                    title: Text("دكتور حمزة"),
-                    subtitle: Text("متواجد"),
-                    leading: Image.asset('assets/images/(1).png'),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("دكتورة ملاذ"),
+                      subtitle: Text("غير متواجد"),
+                      leading: Image.asset('assets/images/(1).png'),
+                    ),
                   ),
                 ),
                 GestureDetector(
@@ -106,12 +118,33 @@ class DoctorList extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => DoctorDetailsScreen()));
+                            builder: (_) => ReserveScreen(
+                                  doctor_name: 'دكتور حمزة',
+                                )));
                   },
-                  child: ListTile(
-                    title: Text("دكتورة مودة"),
-                    subtitle: Text("غير متواجد"),
-                    leading: Image.asset('assets/images/(1).png'),
+                  child: Card(
+                    child: ListTile(
+                      title: Text("دكتور حمزة"),
+                      subtitle: Text("متواجد"),
+                      leading: Image.asset('assets/images/(1).png'),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ReserveScreen(
+                                  doctor_name: 'دكتورة مودة',
+                                )));
+                  },
+                  child: Card(
+                    child: ListTile(
+                      title: Text("دكتورة مودة"),
+                      subtitle: Text("غير متواجد"),
+                      leading: Image.asset('assets/images/(1).png'),
+                    ),
                   ),
                 ),
               ],
