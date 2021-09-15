@@ -1,3 +1,4 @@
+import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/model/choose_model.dart';
@@ -86,6 +87,7 @@ class ChooseSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool choosDate = false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -103,30 +105,40 @@ class ChooseSlot extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                choosDate = true;
+                print(DateTime.april);
+              },
+              child: ChooseDate(
+                week: 'sun',
+                date: '${DateTime.sunday}',
+              ),
+            ),
             ChooseDate(
               week: 'Mon',
-              date: '26',
+              date: '${DateTime.monday}',
             ),
             ChooseDate(
               week: 'Tue',
-              date: '27',
+              date: '${DateTime.tuesday}',
               check: true,
             ),
             ChooseDate(
               week: 'Wed',
-              date: '28',
+              date: '${DateTime.wednesday}',
             ),
             ChooseDate(
               week: 'Thu',
-              date: '29',
+              date: '${DateTime.thursday}',
             ),
             ChooseDate(
               week: 'Fri',
-              date: '30',
+              date: '${DateTime.friday}',
             ),
             ChooseDate(
               week: 'Sat',
-              date: '31',
+              date: '${DateTime.saturday}',
             ),
           ],
         )
