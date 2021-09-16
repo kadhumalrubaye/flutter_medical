@@ -17,9 +17,6 @@ class OurService extends StatelessWidget {
     "تغليف الاسنان",
     "ابتسامة هوليوود",
     "شذرات للاسنان",
-    "التقويم",
-    "زرع الاسنان",
-    "قص اللثة ",
   ];
   @override
   Widget build(BuildContext context) {
@@ -74,22 +71,100 @@ class OurService extends StatelessWidget {
               // horizontal, this would produce 2 rows.
               crossAxisCount: 3,
               // Generate 100 Widgets that display their index in the List
-              children: List.generate(12, (index) {
-                return GestureDetector(
+              children: [
+                GestureDetector(
                   onTap: () {
-                    print("${index + 1}");
+                    print("kok");
                   },
                   child: Column(
                     children: [
                       Card(
-                        child: Image.asset('assets/images/(${index + 1}).png'),
+                        child: Image.asset('assets/images/تقويم.png'),
                       ),
-                      Text(
-                          '${index > _servicesList.length ? index : _servicesList[index]}')
+                      Text('تقويم')
                     ],
                   ),
-                );
-              }),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Image.asset('assets/images/تغليف.png'),
+                      ),
+                      Text('تغليف')
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Image.asset('assets/images/تنظيف.png'),
+                      ),
+                      Text('تنظيف')
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Image.asset('assets/images/حشوات.png'),
+                      ),
+                      Text('حشوات')
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Image.asset('assets/images/زرع.png'),
+                      ),
+                      Text('زرع')
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        child: Image.asset('assets/images/هوليوود.png'),
+                      ),
+                      Text('ابتسامة هوليوود')
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("kok");
+                  },
+                  child: Column(
+                    children: [
+                      Card(
+                        color: Colors.red,
+                        child: Image.asset('assets/images/قلع.png'),
+                      ),
+                      Text('قلع')
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
           // Card(
