@@ -18,7 +18,7 @@ class DoctorList extends StatelessWidget {
       body: Column(
         children: <Widget>[
           MyHeader(
-            height: 333,
+            height: 250,
             imageUrl: 'assets/images/welcome.png',
             child: Column(
               children: <Widget>[
