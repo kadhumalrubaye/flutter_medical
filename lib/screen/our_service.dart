@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
-import 'package:flutter_medical/screen/our_service.dart';
-import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
-import 'package:flutter_medical/widget/menu_card.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
 class OurService extends StatelessWidget {
@@ -25,12 +22,12 @@ class OurService extends StatelessWidget {
         children: <Widget>[
           MyHeader(
             height: 250,
-            imageUrl: 'assets/images/welcome.png',
+            imageUrl: 'assets/images/our_services_header.jpg',
             child: Column(
               children: <Widget>[
                 HeaderLogo(),
                 Text(
-                  'خدماتنا',
+                  '',
                   style: TextStyle(
                     fontSize: 28,
                     color: mTitleTextColor,
@@ -41,7 +38,7 @@ class OurService extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  'ستجد هنا جميع الخدمات التي يقدمها مركز برايت',
+                  '',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -59,7 +56,7 @@ class OurService extends StatelessWidget {
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 3,
-                    children: [Text("data")],
+                    children: [Text("")],
                   ),
                 )
               ],
