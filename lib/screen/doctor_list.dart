@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/model/doctor_calendar.dart';
-import 'package:flutter_medical/screen/doctor_details.dart';
-import 'package:flutter_medical/screen/our_service.dart';
 import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
-import 'package:flutter_medical/widget/menu_card.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
 class DoctorList extends StatelessWidget {
@@ -18,13 +15,13 @@ class DoctorList extends StatelessWidget {
       body: Column(
         children: <Widget>[
           MyHeader(
-            height: 333,
-            imageUrl: 'assets/images/welcome.png',
+            height: 250,
+            imageUrl: 'assets/images/doctors_list_header.jpg',
             child: Column(
               children: <Widget>[
                 HeaderLogo(),
                 Text(
-                  'قائمة الاطباء',
+                  '',
                   style: TextStyle(
                     fontSize: 28,
                     color: mTitleTextColor,

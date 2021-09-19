@@ -3,7 +3,6 @@ import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/screen/contact_with_us.dart';
 import 'package:flutter_medical/screen/doctor_list.dart';
 import 'package:flutter_medical/screen/our_service.dart';
-import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/menu_card.dart';
 import 'package:flutter_medical/widget/my_header.dart';
@@ -15,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
       body: Column(
         children: <Widget>[
           MyHeader(
-            height: 333,
+            height: 250,
             imageUrl: 'assets/images/welcome.png',
             child: Column(
               children: <Widget>[
