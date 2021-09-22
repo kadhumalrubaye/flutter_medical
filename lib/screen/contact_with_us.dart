@@ -31,34 +31,73 @@ class ContactWithUs extends StatelessWidget {
               ],
             ),
           ),
-          Card(
-            shadowColor: Colors.red,
-            child: ListTile(
-              title: Text('للتواصل اضغط على الايقونة'),
-            ),
-          ),
-          new Expanded(
-            child: GridView.count(
-              padding: EdgeInsets.all(10),
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 30,
-              crossAxisCount: 3,
+          Expanded(
+              child: SingleChildScrollView(
+            child: ListView(
               children: [
                 Card(
-                  child: Image.asset('assets/images/social_media_icon (1).png'),
+                  shadowColor: Colors.red,
+                  child: ListTile(
+                    title: Text('للتواصل اضغط على الايقونة'),
+                  ),
                 ),
                 Card(
-                  child: Image.asset('assets/images/social_media_icon (2).png'),
+                  shadowColor: Colors.red,
+                  child: ListTile(
+                    title: Text('هاتف اسيا'),
+                    subtitle: Text('07735715000'),
+                  ),
                 ),
                 Card(
-                  child: Image.asset('assets/images/social_media_icon (3).png'),
+                  shadowColor: Colors.red,
+                  child: ListTile(
+                    title: Text('هاتف زين'),
+                    subtitle: Text('07735715000'),
+                  ),
                 ),
                 Card(
-                  child: Image.asset('assets/images/social_media_icon (4).png'),
+                  shadowColor: Colors.red,
+                  child: ListTile(
+                    title: Text('انستغرام'),
+                    subtitle: Text('clinic_brith'),
+                    leading:
+                        Image.asset('assets/images/social_media_icon (3).png'),
+                  ),
+                ),
+                Card(
+                  shadowColor: Colors.red,
+                  child: ListTile(
+                    title: Text('انستغرام'),
+                    subtitle: Text('clinic_brith'),
+                    leading:
+                        Image.asset('assets/images/social_media_icon (3).png'),
+                  ),
                 ),
               ],
             ),
-          ),
+          ))
+          // new Expanded(
+          //   child: GridView.count(
+          //     padding: EdgeInsets.all(10),
+          //     mainAxisSpacing: 10,
+          //     crossAxisSpacing: 30,
+          //     crossAxisCount: 3,
+          //     children: [
+          //       Card(
+          //         child: Image.asset('assets/images/social_media_icon (1).png'),
+          //       ),
+          //       Card(
+          //         child: Image.asset('assets/images/social_media_icon (2).png'),
+          //       ),
+          //       Card(
+          //         child: Image.asset('assets/images/social_media_icon (3).png'),
+          //       ),
+          //       Card(
+          //         child: Image.asset('assets/images/social_media_icon (4).png'),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           // Card(
           //   child: Text("this is text"),
           // )
