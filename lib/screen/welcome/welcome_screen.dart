@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/screen/contact_with_us.dart';
 import 'package:flutter_medical/screen/doctor_list.dart';
+import 'package:flutter_medical/screen/location.dart';
 import 'package:flutter_medical/screen/our_service.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/menu_card.dart';
@@ -121,24 +122,34 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 18,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => OurService()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          MenuCard(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => LocationMap()));
+                          },
+                          child: MenuCard(
                             imageUrl: 'assets/images/location.png',
                             title: 'موقعنا',
                           ),
-                          MenuCard(
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => OurService()));
+                          },
+                          child: MenuCard(
                             imageUrl: 'assets/images/our_service.png',
                             title: 'خدماتنا',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
