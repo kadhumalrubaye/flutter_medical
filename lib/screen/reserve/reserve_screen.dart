@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/model/choose_model.dart';
+import 'package:flutter_medical/model/doctor_model.dart';
 import 'package:flutter_medical/screen/reserve/widget/choose_date.dart';
 import 'package:flutter_medical/screen/reserve/widget/choose_time_group.dart';
 import 'package:flutter_medical/screen/reserve/widget/my_appbar.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_medical/widget/my_header.dart';
 
 class ReserveScreen extends StatelessWidget {
   final String doctor_name;
+  // final DoctorModel _doctorModel = DoctorDumpData(doctor_name);
 
   const ReserveScreen({Key key, @required this.doctor_name}) : super(key: key);
   @override
