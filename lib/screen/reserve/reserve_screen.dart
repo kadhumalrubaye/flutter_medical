@@ -82,14 +82,19 @@ class ReserveScreen extends StatelessWidget {
   }
 }
 
-class ChooseSlot extends StatelessWidget {
+class ChooseSlot extends StatefulWidget {
   const ChooseSlot({
     Key key,
   }) : super(key: key);
 
   @override
+  State<ChooseSlot> createState() => _ChooseSlotState();
+}
+
+class _ChooseSlotState extends State<ChooseSlot> {
+  bool choosDate = false;
+  @override
   Widget build(BuildContext context) {
-    bool choosDate = false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -109,10 +114,13 @@ class ChooseSlot extends StatelessWidget {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                choosDate = true;
-                print(DateTime.april);
+                setState(() {
+                  choosDate = true;
+                  print(DateTime.april);
+                });
               },
               child: ChooseDate(
+                check: choosDate,
                 week: 'sun',
                 date: '${DateTime.sunday}',
               ),

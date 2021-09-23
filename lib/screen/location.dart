@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-// import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class LocationMap extends StatefulWidget {
   @override
@@ -18,10 +18,13 @@ class LocationMapState extends State<LocationMap> {
 
   @override
   Widget build(BuildContext context) {
-    // return WebView(
-    //     javascriptMode: JavascriptMode.unrestricted,
-    //     initialUrl: 'https://goo.gl/maps/V1P57fjMh7f6wfTs9');
-
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('change me'),
+      ),
+      body: WebView(
+          javascriptMode: JavascriptMode.unrestricted,
+          initialUrl: 'https://goo.gl/maps/V1P57fjMh7f6wfTs9'),
+    );
   }
 }
