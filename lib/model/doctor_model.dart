@@ -5,7 +5,7 @@ class DoctorModel {
   DoctorModel(this._available_dates, this.name);
 }
 
-class DumpData {
+class DoctorDumpData {
   final DoctorModel drMustafa =
       DoctorModel({'Tusday': '6:00 AM - 12:00 PM'}, 'Dr.Mustafa ghani');
   final DoctorModel drHamza = DoctorModel({
