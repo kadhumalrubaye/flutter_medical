@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 
 class UserInfo extends StatelessWidget {
+  final String doctor_name;
   const UserInfo({
+    this.doctor_name,
     Key key,
   }) : super(key: key);
 
@@ -24,7 +26,7 @@ class UserInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'د.ايمن صلاح الدين',
+                'د.$doctor_name',
                 style: TextStyle(
                   color: mButtonColor,
                   fontSize: 18,

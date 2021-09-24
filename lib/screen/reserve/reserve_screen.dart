@@ -1,13 +1,21 @@
+// import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/model/choose_model.dart';
+import 'package:flutter_medical/model/doctor_model.dart';
 import 'package:flutter_medical/screen/reserve/widget/choose_date.dart';
 import 'package:flutter_medical/screen/reserve/widget/choose_time_group.dart';
 import 'package:flutter_medical/screen/reserve/widget/my_appbar.dart';
 import 'package:flutter_medical/screen/reserve/widget/user_info.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
+//#TODO see the sheet here
+
 class ReserveScreen extends StatelessWidget {
+  final String doctor_name;
+  // final DoctorModel _doctorModel = DoctorDumpData(doctor_name);
+
+  const ReserveScreen({Key key, @required this.doctor_name}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +30,9 @@ class ReserveScreen extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                UserInfo(),
+                UserInfo(
+                  doctor_name: doctor_name,
+                ),
               ],
             ),
           ),
@@ -41,27 +51,8 @@ class ReserveScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    ChooseSlot(),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    ChooseTimeGroup(
-                      title: 'صباحا',
-                      list: [
-                        ChooseModel('08.30 AM'),
-                        // ChooseModel('09.30 AM', check: true),
-                        ChooseModel('12.00 AM'),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 32,
-                    ),
-                    ChooseTimeGroup(
-                      title: 'مساءا',
-                      list: [
-                        ChooseModel('02.00 PM'),
-                        ChooseModel('08.30 PM'),
-                      ],
+                    ChooseSlot(
+                      doctorName: 'dr.mustafa',
                     ),
                   ],
                 ),
@@ -74,11 +65,45 @@ class ReserveScreen extends StatelessWidget {
   }
 }
 
-class ChooseSlot extends StatelessWidget {
+class ChooseSlot extends StatefulWidget {
+  final String doctorName;
   const ChooseSlot({
     Key key,
+    this.doctorName,
   }) : super(key: key);
 
+  @override
+  State<ChooseSlot> createState() => _ChooseSlotState(doctorName);
+}
+
+class _ChooseSlotState extends State<ChooseSlot> {
+  final String doctorName;
+  DoctorModel _doctorModel;
+  DoctorDumpData _doctorDumpData;
+  bool choosDate = false;
+
+  DoctorModel doctorinfo() {
+    switch (doctorName) {
+      case 'dr.mustafa':
+        {
+          _doctorModel = _doctorDumpData.drMustafa;
+          return _doctorModel;
+        }
+        break;
+      case 'dr.ayman':
+        {
+          _doctorModel = _doctorDumpData.drAyman;
+          return _doctorModel;
+        }
+        break;
+      default:
+        {
+          return _doctorModel;
+        }
+    }
+  }
+
+  _ChooseSlotState(this.doctorName);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -98,33 +123,67 @@ class ChooseSlot extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  choosDate = true;
+                  print(DateTime.april);
+                });
+              },
+              child: ChooseDate(
+                check: choosDate,
+                week: 'sun',
+                date: '${DateTime.sunday}',
+              ),
+            ),
             ChooseDate(
               week: 'Mon',
-              date: '26',
+              date: '${DateTime.monday}',
             ),
             ChooseDate(
               week: 'Tue',
-              date: '27',
+              date: '${DateTime.tuesday}',
               check: true,
             ),
             ChooseDate(
               week: 'Wed',
-              date: '28',
+              date: '${DateTime.wednesday}',
             ),
             ChooseDate(
               week: 'Thu',
-              date: '29',
+              date: '${DateTime.thursday}',
             ),
             ChooseDate(
               week: 'Fri',
-              date: '30',
+              date: '${DateTime.friday}',
             ),
             ChooseDate(
               week: 'Sat',
-              date: '31',
+              date: '${DateTime.saturday}',
             ),
           ],
-        )
+        ),
+        SizedBox(
+          height: 32,
+        ),
+        ChooseTimeGroup(
+          title: 'صباحا',
+          list: [
+            ChooseModel('08.30 AM'),
+            // ChooseModel('09.30 AM', check: true),
+            ChooseModel('12.00 AM'),
+          ],
+        ),
+        SizedBox(
+          height: 32,
+        ),
+        ChooseTimeGroup(
+          title: 'مساءا',
+          list: [
+            ChooseModel('02.00 PM'),
+            ChooseModel('08.30 PM'),
+          ],
+        ),
       ],
     );
   }
